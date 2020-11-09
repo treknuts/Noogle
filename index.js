@@ -38,7 +38,8 @@ const findLinks = async () => {
       let html = response.data;
       const $ = cheerio.load(html);
       $("a").each((value) => {
-        var link = $(value).attr("href").;
+        var link = $(value).attr("href");
+        link.contains("cao");
         queue.push(link);
       });
       queue.forEach((url) => {
